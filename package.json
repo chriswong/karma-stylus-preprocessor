@@ -1,0 +1,50 @@
+{
+  "name": "karma-stylus-preprocessor",
+  "version": "0.0.1",
+  "description": "A Karma plugin. Compile stylus on the fly.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/chriswong/karma-stylus-preprocessor.git"
+  },
+  "keywords": [
+    "karma-plugin",
+    "karma-preprocessor",
+    "stylus",
+    "styluscss",
+    "stylus-css"
+  ],
+  "author": {
+    "name": "chris",
+    "email": "wfsr@foxmail.com"
+  },
+  "dependencies": {
+    "stylus": "0.40.3"
+  },
+  "peerDependencies": {
+    "karma": ">=0.10"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-npm": "~0.0.2",
+    "grunt-bump": "~0.0.7",
+    "grunt-auto-release": "~0.0.2"
+  },
+  "contributors": [
+    {
+      "name": "chris",
+      "email": "wfsr@foxmail.com"
+    }
+  ],
+  "readme": "# karma-stylus-preprocessor\n\n## Configuration\n\n### Options\n \n \n * `save`: [`Boolean`] Indicates whether result of compilation should be saved in project directory.\n * `paths`: [`Array`] of paths to folders that should be used for file lookup when using `@import`.\n * `compress`: [`Boolean`] Indicates whether css should be compressed or not.\n \n### Example configuration\n\n\tmodule.exports = (config) -> config.set {\n\t\tbasePath: ''\n\t\tpreprocessors:\n\t\t\t'src/**/*.coffee': ['coffee']\n\t\t\t'src/resources/**/*.styl': ['stylus']\n\t\n\t\tfiles: [\n\t\t\t'src/**/*.coffee'\n\t\t\t'src/resources/stylus/index.styl'\n\t\t]\n\n\t\tcoffeePreprocessor:\n\t\t\toptions:\n\t\t\t\tbare: true\n\t\t\t\tsourceMap: false\n\t\t\ttransformPath: (path) -> path.replace(/\\.coffee$/, '.js')\n\t\n\t\tstylusPreprocessor:\n\t\t\toptions:\n\t\t\t\tpaths: ['src/resources/stylus']\n\t\t\t\tsave: true\n\t\t\ttransformPath: (path) -> path.replace(/\\.styl$/, '.compiled.css')\n\t\n\t\t\n\t\tbrowsers: ['Chrome']\n\t\tcaptureTimeout: 6000\n\t\thostname: 'localhost'\n\t\tport: 9876\n\t\n\t\tplugins: [\n\t\t\t'karma-coffee-preprocessor'\n\t\t\t'karma-stylus-preprocessor'\n\t\t\t'karma-chrome-launcher'\n\t\t]\n\t\n\t\tsingleRun: false\n\t}\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/chriswong/karma-stylus-preprocessor/issues"
+  },
+  "_id": "karma-stylus-preprocessor@0.1.0",
+  "_from": "karma-stylus-preprocessor@*"
+}
