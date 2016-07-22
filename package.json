@@ -22,7 +22,7 @@
     "email": "wfsr@foxmail.com"
   },
   "dependencies": {
-    "stylus": "0.40.3"
+    "stylus": "^0.50.0"
   },
   "peerDependencies": {
     "karma": ">=0.10"

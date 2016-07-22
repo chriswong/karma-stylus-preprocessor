@@ -18,7 +18,7 @@ var createStylusPreprocessor = function (args, config, logger, helper) {
 
   var rendered = function (done, filePath, error, content) {
     if (error !== null && error !== undefined) {
-      log.error('Error:%s\n', error);
+      log.error(error.stack);
     } else {
       if (options.save) {
         var p = path.resolve(filePath.replace(/\/([\.a-zA-Z0-9\-\_]+).css$/, '/'));
